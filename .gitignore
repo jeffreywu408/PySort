@@ -1,3 +1,7 @@
+.gitattributes
+.project
+.pydevproject
+
 /Debug/
 
 # Eclipse
