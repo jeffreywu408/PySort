@@ -122,24 +122,17 @@ def merge(first, second, array):
         indexSecond += 1
         j += 1
 
-def quickSort(array, i = None):
+def quickSort(array, lowerIndex = None, higherIndex = None):
     if not array:
         return
     
-    if i is None:
-        quickSort2(array, 0, len(array) - 1)
-    else:
-        quickSort3(array, 0, len(array) - 1)
-
-def quickSort2(array, lowerIndex, higherIndex):
-    if not array:
-        return
-    
-    if (lowerIndex < higherIndex):
+    if (lowerIndex is None and higherIndex is None):
+        quickSort(array, 0, len(array) - 1)
+        
+    if (lowerIndex is not None) and (higherIndex is not None) and (lowerIndex < higherIndex):
         pivotIndex = partition(array, lowerIndex, higherIndex)
-
-        quickSort2(array, lowerIndex, pivotIndex - 1)
-        quickSort2(array, pivotIndex + 1, higherIndex)
+        quickSort(array, lowerIndex, pivotIndex - 1)
+        quickSort(array, pivotIndex + 1, higherIndex)
 
 def partition(array, lowerIndex, higherIndex):
     # Pick a pivot between lower index and higher index
@@ -164,11 +157,14 @@ def partition(array, lowerIndex, higherIndex):
 
     return i;
 
-def quickSort3(array, lowerIndex, higherIndex):
+def quickSort3(array, lowerIndex = None, higherIndex = None):
     if not array:
         return
     
-    if (lowerIndex < higherIndex):
+    if (lowerIndex is None and higherIndex is None):
+        quickSort3(array, 0, len(array) - 1)
+        
+    if (lowerIndex is not None) and (higherIndex is not None) and (lowerIndex < higherIndex):
         # Pick a pivot between lower index and higher index
         pivotIndex = random.randint(lowerIndex, higherIndex)
 
@@ -254,7 +250,7 @@ def main():
     myList = [(random.randint(0, n)) for _ in range(size)]
     print("Quick Sort (3-Way Partition)")
     start = time.time()
-    quickSort(myList, 3)
+    quickSort3(myList)
     duration = time.time() - start
     print("(%s): %f seconds\n" % (isSorted(myList), duration))
     
