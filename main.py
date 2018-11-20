@@ -129,7 +129,7 @@ def quickSort(array, i = None):
     if i is None:
         quickSort2(array, 0, len(array) - 1)
     else:
-        quickSort3(array, 0, array.length - 1)
+        quickSort3(array, 0, len(array) - 1)
 
 def quickSort2(array, lowerIndex, higherIndex):
     if not array:
