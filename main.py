@@ -263,9 +263,7 @@ def main():
     start = time.time()
     myList.sort()
     duration = time.time() - start
-    print("(%s): %f seconds\n" % (isSorted(myList), duration))
-    
-    
+    print("(%s): %f seconds\n" % (isSorted(myList), duration)) 
 
 if __name__ == '__main__':
     main()
