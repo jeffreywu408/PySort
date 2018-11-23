@@ -145,7 +145,7 @@ def quickSort(array, lowerIndex=None, higherIndex=None):
 
 def partition(array, lowerIndex, higherIndex):
     # Pick a pivot between lower index and higher index
-    pivotIndex = random.randint(lowerIndex, higherIndex)
+    pivotIndex = random.randint(lowerIndex, higherIndex + 1)
 
     # Place pivot at the end of the subarray
     array[higherIndex], array[pivotIndex] = array[pivotIndex], array[higherIndex]
@@ -177,7 +177,7 @@ def quickSort3(array, lowerIndex=None, higherIndex=None):
 
     if (lowerIndex is not None) and (higherIndex is not None) and (lowerIndex < higherIndex):
         # Pick a pivot between lower index and higher index
-        pivotIndex = random.randint(lowerIndex, higherIndex)
+        pivotIndex = random.randint(lowerIndex, higherIndex + 1)
 
         # Place pivot at the start of the sub-array
         array[lowerIndex], array[pivotIndex] = array[pivotIndex], array[lowerIndex]
