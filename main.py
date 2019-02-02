@@ -215,8 +215,8 @@ def isSorted(list):
 
 
 def main():
-    size = 1000;
-    n = 1000;
+    size = 1000
+    n = 1000
 
     myList = [(random.randint(0, n)) for _ in range(size)]
     print("Bubble Sort")
