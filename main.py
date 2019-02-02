@@ -137,7 +137,8 @@ def quick_sort(array, lower_index=None, higher_index=None):
     if lower_index is None and higher_index is None:
         quick_sort(array, 0, len(array) - 1)
 
-    if (lower_index is not None) and (higher_index is not None) and (lower_index < higher_index):
+    if (lower_index is not None) and (higher_index is not None) \
+            and (lower_index < higher_index):
         pivot_index = partition(array, lower_index, higher_index)
         quick_sort(array, lower_index, pivot_index - 1)
         quick_sort(array, pivot_index + 1, higher_index)
@@ -148,7 +149,8 @@ def partition(array, lowerIndex, higherIndex):
     pivot_index = random.randint(lowerIndex, higherIndex)
 
     # Place pivot at the end of the subarray
-    array[higherIndex], array[pivot_index] = array[pivot_index], array[higherIndex]
+    array[higherIndex], array[pivot_index] = \
+        array[pivot_index], array[higherIndex]
 
     pivot_index = higherIndex
     pivot = array[pivot_index]
@@ -180,7 +182,8 @@ def quick_sort3(array, lowerIndex=None, higherIndex=None):
         pivot_index = random.randint(lowerIndex, higherIndex)
 
         # Place pivot at the start of the sub-array
-        array[lowerIndex], array[pivot_index] = array[pivot_index], array[lowerIndex]
+        array[lowerIndex], array[pivot_index] = \
+            array[pivot_index], array[lowerIndex]
 
         pivot_index = lowerIndex
         pivot = array[pivot_index]
